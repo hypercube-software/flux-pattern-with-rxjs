@@ -45,7 +45,7 @@ This project demonstrate **how reactive programming is way more simple to implem
 
 ### The main idea
 
-The share state is just a tree of objects hosted in a singleton called a store. Any modification on this tree will fire an event inside an event bus. We are going to build this event bus using an Rx [Observable](https://RxJS-dev.firebaseapp.com/guide/observable). You can subscribe to it and unsubscribe from it at any point in time.
+The shared state is just a tree of objects hosted in a singleton called a **store**. Any modification on this tree will fire an event inside an event bus. We are going to build this event bus using an Rx [Observable](https://RxJS-dev.firebaseapp.com/guide/observable). You can subscribe to it and unsubscribe from it at any point in time.
 
 The observable is like a stream of events. Each event is just a string saying "the property A.B.C.D in the shared state have changed".
 
@@ -62,7 +62,7 @@ The beauty of Rx is that you can filter the stream of events before subscribing 
 observable.pipe(filter(event=>...select what you want...)).subscribe(subscriberCallBack)
 ```
 
-In the class `GlobalStore` we used this technique in the method `subscribe`.
+In the ES6 class `GlobalStore` we use this technique in the method `subscribe`.
 
 - `MyAppStore.subscribe("a.b.c",callback)`: react only on this specific node
 - `MyAppStore.subscribe("a.*",callback)`: react to any change on node 'a' and below
@@ -98,14 +98,14 @@ Example:
 
 ### Protect the shared state
 
-It would be very dangerous to give a direct reference to the share state to the consumer. Remember we want to keep unidirectional data flow. Here some solutions to this problem:
+It would be very dangerous to give a direct reference to the shared state to the consumer. Remember we want to keep unidirectional data flow. Here some solutions to this problem:
 
 - We can clone before delivering the value
 - We can use a library that promote immutable data structures like [immutable.js](https://immutable-js.github.io/immutable-js/)
 
 To keep it simple, we opted to clone the value, even it is slow.
 
-## A little of OOP for better encapsulation
+## A little bit of OOP for better encapsulation
 
 The ES6 class `GlobalStore` provides the basics of a shared state with an event bus powered by RxJS.
 
