@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents** 
+
+- [React Flux pattern with RxJS 6](#react-flux-pattern-with-rxjs-6)
+  - [What Flux is all about?](#what-flux-is-all-about)
+  - [RxJS to the rescue](#rxjs-to-the-rescue)
+    - [The main idea](#the-main-idea)
+    - [How to subscribe to a subset of events](#how-to-subscribe-to-a-subset-of-events)
+    - [Don't forget to unsubscribe](#dont-forget-to-unsubscribe)
+    - [Protect the shared state](#protect-the-shared-state)
+  - [A little of OOP for better encapsulation](#a-little-of-oop-for-better-encapsulation)
+- [How to test this project](#how-to-test-this-project)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # React Flux pattern with RxJS 6
 
 ## What Flux is all about?
