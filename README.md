@@ -9,7 +9,7 @@
     - [How to subscribe to a subset of events](#how-to-subscribe-to-a-subset-of-events)
     - [Don't forget to unsubscribe](#dont-forget-to-unsubscribe)
     - [Protect the shared state](#protect-the-shared-state)
-  - [A little of OOP for better encapsulation](#a-little-of-oop-for-better-encapsulation)
+  - [A little bit of OOP for better encapsulation](#a-little-bit-of-oop-for-better-encapsulation)
 - [How to test this project](#how-to-test-this-project)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
