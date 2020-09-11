@@ -52,7 +52,15 @@ The observable is like a stream of events. Each event is just a string saying "t
 The important point here is that we use **hot observables** instead of **cold observables**. In RxJS 6, They are called [ConnectableObservable](https://RxJS-dev.firebaseapp.com/api/operators/publish). 
 
 - **Cold observables** are not designed to build an event bus, because you will read all events from the start.
-- **Hot observables** is the perfect choice to build an event bus, because when to connect to it, you get the stream of events as it is now. You don't receive past events.
+- **Hot observables** is the perfect choice to build an event bus, because when you connect to it, you get the stream of events as it is now. You don't receive past events.
+
+Sending an event into the bus is done through an **Observer** with the method `next`:
+
+```javascript
+this.outputObserver.next("a.b.c.d");
+```
+
+As you can see, our event is just a simple string.
 
 ### How to subscribe to a subset of events
 
@@ -193,7 +201,7 @@ class MyAppStore extends GlobalStore {
 
 ```
 
-At some point in time, the shared state will contains this tree:
+At some point in time, the shared state will contain this tree:
 
 ![image-20200911223041604](assets/image-20200911223041604.png)
 
