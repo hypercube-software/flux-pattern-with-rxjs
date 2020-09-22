@@ -5,7 +5,7 @@
 [1.2 RxJS to the rescue](#12-rxjs-to-the-rescue)  
 [1.2.1 The main idea](#121-the-main-idea)  
 [1.2.2 How to subscribe to a subset of events](#122-how-to-subscribe-to-a-subset-of-events)  
-[1.2.3 Don't forget to unsubscribe](#123-don-t-forget-to-unsubscribe)  
+[1.2.3 Don't forget to unsubscribe](#123-dont-forget-to-unsubscribe)  
 [1.2.4 Protect the shared state](#124-protect-the-shared-state)  
   
   
