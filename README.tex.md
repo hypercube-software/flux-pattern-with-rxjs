@@ -1,23 +1,6 @@
 # React Flux pattern with RxJS 6
-**Table of content**
 
-[1.1 What Flux is all about?](#11-what-flux-is-all-about)  
-[1.2 RxJS to the rescue](#12-rxjs-to-the-rescue)  
-[1.2.1 The main idea](#121-the-main-idea)  
-[1.2.2 How to subscribe to a subset of events](#122-how-to-subscribe-to-a-subset-of-events)  
-[1.2.3 Don't forget to unsubscribe](#123-don-t-forget-to-unsubscribe)  
-[1.2.4 Protect the shared state](#124-protect-the-shared-state)  
-  
-  
-[1.3 A little bit of OOP for better encapsulation](#13-a-little-bit-of-oop-for-better-encapsulation)  
-  
-  
-[2 How to test this project](#2-how-to-test-this-project)  
-
-
-
-
-## 1.1 What Flux is all about?
+## What Flux is all about?
 
 Here is the Flux pattern:
 
@@ -40,11 +23,11 @@ The issue is the usual one with frameworks and API:
 - You will heavily depend on them at the point your project will be recognized as a "Flux project" or a "Redux project".
 - Their objects will spread everywhere in your code. Actions everywhere. Dispatchers everywhere.
 
-## 1.2 RxJS to the rescue
+## RxJS to the rescue
 
 This project demonstrate **how reactive programming is way more simple to implement a shared state** with loose coupling. I argue that learning RxJS is more valuable than learning Flux or Redux because it is a programming paradigm that you can leverage in other languages like Java. One single JavaScript file is enough to build you own event bus.
 
-### 1.2.1 The main idea
+### The main idea
 
 The shared state is just a tree of objects hosted in a singleton called a **store**. Any modification on this tree will fire an event inside an event bus. We are going to build this event bus using an Rx [Observable](https://RxJS-dev.firebaseapp.com/guide/observable). You can subscribe to it and unsubscribe from it at any point in time.
 
@@ -63,7 +46,7 @@ this.outputObserver.next("a.b.c.d");
 
 As you can see, our event is just a simple string.
 
-### 1.2.2 How to subscribe to a subset of events
+### How to subscribe to a subset of events
 
 The beauty of Rx is that you can filter the stream of events before subscribing to it. This means you can decide to subscribe to a subset of events instead of all of them. This is done using the operator **filter**:
 
@@ -76,7 +59,7 @@ In the ES6 class `GlobalStore` we use this technique in the method `subscribe`.
 - `MyAppStore.subscribe("a.b.c",callback)`: react only on this specific node
 - `MyAppStore.subscribe("a.*",callback)`: react to any change on node 'a' and below
 
-### 1.2.3 Don't forget to unsubscribe
+### Don't forget to unsubscribe
 
 In RxJS when you subscribe, you receive an object used to unsubscribe. So it is important to use this "handle" to avoid any memory leak:
 
@@ -105,7 +88,7 @@ Example:
 
 
 
-### 1.2.4 Protect the shared state
+### Protect the shared state
 
 It would be very dangerous to give a direct reference to the shared state to the consumer. Remember we want to keep unidirectional data flow. Here some solutions to this problem:
 
@@ -114,7 +97,7 @@ It would be very dangerous to give a direct reference to the shared state to the
 
 To keep it simple, we opted to clone the value, even it is slow.
 
-## 1.3 A little bit of OOP for better encapsulation
+## A little bit of OOP for better encapsulation
 
 The ES6 class `GlobalStore` provides the basics of a shared state with an event bus powered by RxJS.
 
@@ -213,7 +196,7 @@ What you want is
 - To avoid the use of a single giant store for absolutely everything.
 - To avoid the use of hard coded keys everywhere in the code with `GlobalStore.send(key)` and `GlobalStore.get(key)`
 
-# 2 How to test this project
+# How to test this project
 
 First install everything:
 
