@@ -1,21 +1,15 @@
 # React Flux pattern with RxJS 6
 **Table of content**
 
-[1.1 What Flux is all about?](#11-what-flux-is-all-about)  
-[1.2 RxJS to the rescue](#12-rxjs-to-the-rescue)  
-[1.2.1 The main idea](#121-the-main-idea)  
-[1.2.2 How to subscribe to a subset of events](#122-how-to-subscribe-to-a-subset-of-events)  
-[1.2.3 Don't forget to unsubscribe](#123-dont-forget-to-unsubscribe)  
-[1.2.4 Protect the shared state](#124-protect-the-shared-state)  
-  
-  
-[1.3 A little bit of OOP for better encapsulation](#13-a-little-bit-of-oop-for-better-encapsulation)  
-  
-  
+[1 React Flux pattern with RxJS 6](#react-flux-pattern-with-rxjs-6)  
+&nbsp;&nbsp;&nbsp;&nbsp;[1.1 What Flux is all about?](#11-what-flux-is-all-about)  
+&nbsp;&nbsp;&nbsp;&nbsp;[1.2 RxJS to the rescue](#12-rxjs-to-the-rescue)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.2.1 The main idea](#121-the-main-idea)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.2.2 How to subscribe to a subset of events](#122-how-to-subscribe-to-a-subset-of-events)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.2.3 Don't forget to unsubscribe](#123-dont-forget-to-unsubscribe)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.2.4 Protect the shared state](#124-protect-the-shared-state)  
+&nbsp;&nbsp;&nbsp;&nbsp;[1.3 A little bit of OOP for better encapsulation](#13-a-little-bit-of-oop-for-better-encapsulation)  
 [2 How to test this project](#2-how-to-test-this-project)  
-
-
-
 
 ## 1.1 What Flux is all about?
 
